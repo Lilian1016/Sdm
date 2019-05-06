@@ -14,7 +14,21 @@
 input {
     -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */   
 }
-
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
 
 </style>
 </head>
@@ -31,7 +45,7 @@ input {
     	<span style="font-size:18px;float: left;font-weight:bold;">&nbsp&nbsp基本資料</span><br>
 <span style="font-size:18px;font-weight:bold;">1.&nbsp填答人身分:</span><br>
  <div style="border:1px #7DE372 solid;margin-bottom: 5px;"> 
-  <input type="radio" name="identity" value="patient" >病人本身</div>
+	 <input type="radio" name="identity" value="patient" id="c1" ><label for="c1"><span></span>病人本身/</label></div>
  <div style="border:1px #7DE372 solid;"> 
   <input type="radio" name="identity" value="family">病人家屬</div>
 <br>
