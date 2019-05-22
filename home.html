@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <title>國泰醫院醫病決策系統</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <style>
+        * {
+        /*border: solid 2px red;*/
+        font-family: 微軟正黑體;
+        position: relative;
+        cursor: default;
+    }
+
+    .body {
+        text-align: center;
+        background-color: #D4E7D3;
+        padding: 10px 0px 10px 0px;
+    }
+
+    input {
+        -webkit-appearance: none;
+        /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+    }
+
+    .ui-page {
+        background: #D4E7D3;
+        padding: 10px 0px 10px 0px;
+    }
+
+    .header {
+        width: auto;
+        height: 70px;
+        margin: 0 auto;
+        border: #9E9E9E 1px solid;
+        background-color: #FFFFFF;
+        border-radius: 5px;
+
+    }
+
+    img {
+
+        padding-top: 10px;
+    }
+
+    .content {
+        border: 1px #9EA49E solid;
+        border-radius: 5px;
+        width: auto height:auto;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 30px;
+        padding: 0px 20px 0px 20px;
+        background-color: #FFFFFF;
+    }
+
+    .text {
+        color: #229954;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .footer {
+        height: auto;
+
+    }
+
+    button {
+        width: auto;
+        height: 30px;
+        font-size: 16px;
+        background-color: #A5D8A0;
+        border: 1px #7DE372 solid;
+        border-radius: 5px;
+    }
+
+    </style>
+</head>
+
+<body class="body">
+    <div data-role="page" class="ui-page" id="pageone">
+        <div id="header" class="header">
+            <img src="https://i.screenshot.net/ejgkgsv">
+        </div><br>
+        <h class="text">醫病共享決策輔助工具調查問卷<h><br>
+                <h class="text">(病人及家屬)<h><br><br>
+                        <div data-role="content" class="content">
+                            <br>
+                            <span style="font-size:14px;">敬請您在使用輔助工具與醫療人員討論醫療決策後，針對本次過程回覆您的看法和建議，本問卷填寫預計花費10分鐘，可能造成您時間的耗費及心理的負擔，您可自由決定是否回覆本問卷，不須任何理由，且不會引起任何不愉快或影響日後之醫療照顧。本問卷採不記名調查，不收集可辨識個人之資料，整體分析結果將作醫病共享決策推動模式之參考。
+                            </span><br>
+                            <span style="font-size:14px;">國泰醫院 敬上</span><br>
+                            <br>
+                            <a href="#pagetwo" data-role="button" data-inline="true" data-mini="true">填寫</a>
+                        </div>
+    </div><br>
+    </div>
+    <div data-role="page" class="ui-page" id="pagetwo">
+        <div id="header" class="header">
+            <img src="https://i.screenshot.net/ejgkgsv">
+        </div><br>
+        <div data-role="content" class="content">
+            <br>
+            <div style="width: 8px;height: 25px;background-color:#7DE372;float: left;"></div>
+            <span style="font-size:18px;float: left;font-weight:bold;">&nbsp&nbsp基本資料</span><br>
+            <form method="post" action="demoform.asp">
+                <fieldset data-role="controlgroup" data-inline="true">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">1. 身份：</legend>
+                    <label for="patient">病人本身</label>
+                    <input type="radio" name="identity" id="patient" value="patient" checked>
+                    <label for="family">病人家屬</label>
+                    <input type="radio" name="identity" id="family" value="family">
+                </fieldset>
+                <fieldset data-role="controlgroup" data-inline="true">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">2. 性别：</legend>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male" checked>
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">3. 您的年齡：</legend><br>
+                    <select name="age" id="age">
+                        <option value="age18">18歲以下</option>
+                        <option value="age29">19到29歲</option>
+                        <option value="age39">30到39歲</option>
+                        <option value="age49">40到49歲</option>
+                        <option value="age59">50到59歲</option>
+                        <option value="age64">60到64歲</option>
+                        <option value="age65">65歲以上</option>
+                    </select>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">4. 您的教育程度：</legend><br>
+                    <select name="day" id="day">
+                        <option value="mon">不識字</option>
+                        <option value="tue">國小肄業</option>
+                        <option value="wed">小學畢業</option>
+                        <option value="thu">國/初中畢業</option>
+                        <option value="fri">高中/職畢業</option>
+                        <option value="sat">大專/學畢業</option>
+                        <option value="sun">碩士</option>
+                        <option value="sun">博士或以上</option>
+                    </select>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">5. 這次主要與您一同看輔助工具，參與醫療決策的人為:</legend><br><br>
+                    <select name="day" id="day">
+                        <option value="mon">自己一人</option>
+                        <option value="tue">父母</option>
+                        <option value="wed">配偶</option>
+                        <option value="thu">子女或其配偶</option>
+                        <option value="fri">其他家人</option>
+                    </select>
+                </fieldset>
+                <br>
+                <a href="#pageone" data-role="button" data-inline="true" data-mini="true">上一頁</a>
+                <a href="#pagethree" data-role="button" data-inline="true" data-mini="true">下一頁</a>
+        </div>
+    </div><br>
+    </div>
+    <div data-role="page" class="ui-page" id="pagethree">
+        <div id="header" class="header">
+            <img src="https://i.screenshot.net/ejgkgsv">
+        </div><br>
+        <div data-role="content" class="content">
+            <br>
+            <div style="width: 8px;height: 25px;background-color:#7DE372;float: left;"></div>
+            <span style="font-size:18px;float: left;font-weight:bold;">&nbsp&nbsp使用後的經驗和看法</span><br>
+            <form method="post" action="demoform.asp">
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">1. 此刻是否已經做好醫療選項(治療或篩檢方案)的決定:</legend><br><br>
+                    <select name="age" id="age">
+                        <option value="age18">我目前仍無法決定</option>
+                        <option value="age29">我在使用輔助工具前已做好決定</option>
+                        <option value="age39">我在使用輔助工具前有決定，但使用輔助工具後改變決定的選項</option>
+                        <option value="age49">我在使用輔助工具後才做好決定</option>
+                    </select>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">2. 使用此輔助工具<u>前</u>，在面對目前的醫療問題，您的焦慮程度:</legend><br><br>
+                    <select name="day" id="day">
+                        <option value="mon">非常焦慮</option>
+                        <option value="tue">焦慮</option>
+                        <option value="wed">小學畢業</option>
+                        <option value="thu">稍微焦慮</option>
+                        <option value="fri">完全不焦慮</option>
+                    </select>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">3.&nbsp使用此輔助工具<u>後</u>，在面對目前的醫療問題，您的焦慮程度:</legend><br><br>
+                    <select name="day" id="day">
+                        < <option value="mon">非常焦慮</option>
+                            <option value="tue">焦慮</option>
+                            <option value="wed">小學畢業</option>
+                            <option value="thu">稍微焦慮</option>
+                            <option value="fri">完全不焦慮</option>
+                    </select>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">4.&nbsp此輔助工具能充份提供您目前面對醫療決策的相關知識:</legend><br><br>
+                    <select name="day" id="day">
+                        < <option value="mon">非常同意</option>
+                            <option value="tue">同意</option>
+                            <option value="wed">普通</option>
+                            <option value="thu">不同意</option>
+                            <option value="fri">非常不同意</option>
+                    </select>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">5.&nbsp此輔助工具有助於您更瞭解目前面對的各種醫療選項優、缺點的內容:</legend><br><br>
+                    <select name="day" id="day">
+                        < <option value="mon">非常同意</option>
+                            <option value="tue">同意</option>
+                            <option value="wed">普通</option>
+                            <option value="thu">不同意</option>
+                            <option value="fri">非常不同意</option>
+                    </select>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">6.&nbsp此輔助工具有助於您更瞭解目前面對醫療選項時，您最在意的事:</legend><br><br>
+                    <select name="day" id="day">
+                        < <option value="mon">非常同意</option>
+                            <option value="tue">同意</option>
+                            <option value="wed">普通</option>
+                            <option value="thu">不同意</option>
+                            <option value="fri">非常不同意</option>
+                    </select>
+                </fieldset>
+                <fieldset data-role="fieldcontain">
+                    <legend style="font-size:18px;float: left;font-weight:bold;">7.&nbsp此輔助工具能協助您做出<u>最適合</u>的醫療選擇:</legend><br><br>
+                    <select name="day" id="day">
+                        < <option value="mon">非常同意</option>
+                            <option value="tue">同意</option>
+                            <option value="wed">普通</option>
+                            <option value="thu">不同意</option>
+                            <option value="fri">非常不同意</option>
+                    </select>
+                </fieldset>
+                <span style="font-size:18px;font-weight:bold;float: left;margin-bottom: 5px;">8.&nbsp若您在問題7選擇「普通」、「不同意」、「非常不同意」，請問您還想知道哪些資訊以幫助您做出選擇:</span><br><br><br>
+                <label for="fname"></label>
+                <input type="text" name="fname" id="fname">
+               <fieldset>
+               	<span style="font-size:18px;font-weight:bold;">9.&nbsp參與此次醫病共享決策過程，您的整體感受為何:(可複選)</span><br>
+   <label for="day"></label>
+   <select name="day" id="day" multiple="multiple" data-native-menu="false">
+	<option value="mon">沒有感覺</option>
+	<option value="tue">花太多時間</option>
+	<option value="wed">受到尊重</option>
+	<option value="thu">更困惑</option>
+	<option value="fri">更放心接受治療</option>
+	<option value="sat">獲得重要的醫療知識</option>
+	<option value="sun">不需要這個過程</option>
+   </select>
+   </fieldset>
+                
+                <br>
+                <a href="#pageone" data-role="button" data-inline="true" data-mini="true">上一頁</a>
+                <a href="#pagethree" data-role="button" data-inline="true" data-mini="true">下一頁</a>
+        </div>
+    </div><br>
+    </div>
+</body>
+
+</html>
